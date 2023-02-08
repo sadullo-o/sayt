@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>Bootstrap Theme Company Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<style>
+
+.video-js.vjs-vjsdownload .vjs-button.vjs-vjsdownload{cursor:pointer;display:block;font-family:VideoJs}.video-js.vjs-vjsdownload .vjs-button.vjs-vjsdownload:before{display:block;position:relative;top:4px;content:'\f101';transform:rotate(90deg);font-size:1.5em}.video-js.vjs-vjsdownload .vjs-button.vjs-vjsdownload:after{display:block;content:' ';width:4px;height:5px;background-color:white;position:relative;top:-11px;left:calc(50% - 2px)}
+</style>
+</head>
+<body>
+
+
+<div class="container text-center">
+  <h1>Cartoonize</h1>
+    <video width="320" height="240" controls>
+  <source src="{{video.file.url}}" type="video/mp4">
+</video>
+<form method="post">
+  {% csrf_token %}
+  <button class="btn btn-primary" id="but"  type="submit">Send to cartonize</button>
+</form>
+<p>Click Submit and wait 1-2 minutes, the video will download automatically when it's ready!!!</p>
+  <!-- <video id="videojs-vjsdownload-player" class="video-js vjs-default-skin"  controls>-->
+<!--    <source src="{{user}}" type='video/avi'>-->
+<!--&lt;!&ndash;    <source src="//vjs.zencdn.net/v/oceans.webm" type='video/webm'>&ndash;&gt;-->
+<!--  </video>-->
+</div>
+<!--<script type="text/javascript">-->
+<!--document.getElementById("butt").click();-->
+<!--</script>-->
+
+<script>
+
+<!--function getCookie(name) {-->
+<!--    var cookieValue = null;-->
+<!--    if (document.cookie && document.cookie !== '') {-->
+<!--        var cookies = document.cookie.split(';');-->
+<!--        for (var i = 0; i < cookies.length; i++) {-->
+<!--            var cookie = jQuery.trim(cookies[i]);-->
+<!--            // Does this cookie string begin with the name we want?-->
+<!--            if (cookie.substring(0, name.length + 1) === (name + '=')) {-->
+<!--                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));-->
+<!--                break;-->
+<!--            }-->
+<!--        }-->
+<!--    }-->
+<!--    return cookieValue;-->
+<!--}-->
+
+<!--function aa(){-->
+<!-- var csrftoken = getCookie('csrftoken');-->
+<!--  $.ajax({-->
+<!--    type: 'POST',-->
+<!--    url: '{% url "result" %}',-->
+<!--    data: {-->
+<!--      'csrfmiddlewaretoken':csrftoken-->
+<!--    },-->
+<!--    success: ()=>{-->
+<!--      console.log('ss')-->
+
+<!--    }-->
+
+<!--  })-->
+
+<!--}-->
+
+<!--const search_input = document.getElementById("but")-->
+
+<!-- search_input.addEventListener('click', e=>{-->
+<!--  aa()-->
+
+<!--});-->
+
+
+
+</script>
+</body>
+</html>
