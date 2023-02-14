@@ -34,3 +34,5 @@ class DetailView(RetrieveUpdateDestroyAPIView):
     permission_classes = (AvtorgaRuxsat, )
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
+
+
