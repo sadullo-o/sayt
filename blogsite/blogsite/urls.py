@@ -20,6 +20,8 @@ from drf_yasg.views import get_schema_view
 from  drf_yasg import openapi
 from rest_framework import permissions
 
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
+
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -42,6 +44,10 @@ urlpatterns = [
     path('api/v1/dj-rest-auth/', include('dj_rest_auth.urls')),
     path('api/v1/dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
     path('api/allauth/', include('allauth.urls')),
+
+    path('api/v1/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/v1/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/v1/token/verify', TokenVerifyView.as_view(), name='token_verify'),
 
     # path('openapi', get_schema_view(
     #     title="Blog Api",

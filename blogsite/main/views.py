@@ -53,6 +53,7 @@ from rest_framework import viewsets
 
 
 class BlogsView(viewsets.ModelViewSet):
+    permission_classes = (permissions.IsAuthenticated,)
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
 
